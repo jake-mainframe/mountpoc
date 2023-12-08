@@ -32,6 +32,7 @@ zfsadm format -aggregate ZFS.MOUNTPOC
 
 MOUNT FILESYSTEM('ZFS.MOUNTPOC') TYPE(ZFS) MOUNTPOINT('/tmp/mountpoc')
 
+extattr +a modwshl
 
 UNMOUNT FILESYSTEM('ZFS.MOUNTPOC')
 
