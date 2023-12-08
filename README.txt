@@ -12,10 +12,11 @@ mkdir '/tmp/mountpoc'
   NAME(ZFS.MOUNTPOC) +
   LINEAR +
   VOLUME(USER0B) +
-  CYL(10 10) +
+  TRACK(6 0) +
   SHAREOPTIONS(3,3) +
   )
 /*
+
 
 //REPRO JOB (ACCT),MSGCLASS=H,NOTIFY=&SYSUID,REGION=0M
 //IDCAMS EXEC PGM=IDCAMS
@@ -27,6 +28,7 @@ mkdir '/tmp/mountpoc'
   REPRO INFILE(INDD) OUTFILE(OUTDD) 
 //*
 
+zfsadm format -aggregate ZFS.MOUNTPOC
 
 MOUNT FILESYSTEM('ZFS.MOUNTPOC') TYPE(ZFS) MOUNTPOINT('/tmp/mountpoc')
 
